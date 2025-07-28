@@ -1,8 +1,7 @@
-// app/components/page.tsx
 'use client'
 
-import CodeBlock from "@/components/CodeBlock";
-import { Footer } from "@/components/Designs/Footer";
+import CodeBlock from '@/components/CodeBlock'
+import { Footer } from '@/components/Designs/Socials-Tab'
 
 export default function Page() {
   const componentCode = `'use client'
@@ -20,7 +19,7 @@ import {
 } from '@tabler/icons-react'
 import { motion } from 'framer-motion'
 
-export function Footer() {
+export function SocialsTab() {
   const socialLinks = [
     { icon: IconBrandGithub, href: 'https://github.com', color: 'text-white' },
     { icon: IconBrandInstagram, href: 'https://instagram.com', color: 'text-pink-400' },
@@ -33,7 +32,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className='pt-20'>
+    <section>
       <motion.div
         className='flex items-center justify-center'
         initial={{ opacity: 0, scale: 0.9 }}
@@ -59,46 +58,46 @@ export function Footer() {
           </div>
         </div>
       </motion.div>
-    </footer>
+    </section>
   )
-}`;
+}`
 
 const snippetCode = `'use client'
 
-import { Footer } from "@/components/Footer";
+import { SocialsTab } from '@/components/SocialsTab'
 
 export function page() {
   return (
     <div>
-      <Footer />
+      <SocialsTab />
     </div>
   )
 }`
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 py-10 space-y-10 ">
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold">Component Showcase</h1>
-
+    <div className='min-h-screen bg-zinc-950 text-white px-6 py-10 space-y-10 '>
+      <div className='text-center space-y-2'>
+        <h1 className='text-4xl font-bold'>Component Showcase</h1>
       </div>
 
-      {/* Render the Footer */}
       <Footer />
-      <div className="text-center space-y-2">
-        <p className="text-neutral-400">Below is the Footer component with code snippet</p>
+
+      <div className='text-center space-y-2'>
+        <p className='text-neutral-400'>Below is the Socials Tab component with code snippet</p>
       </div>
-      {/* Render the CodeBlock */}
-      <div className="max-w-4xl mx-auto">
-        <CodeBlock code={componentCode} language="javascript" />
+
+      <div className='max-w-4xl mx-auto'>
+        <CodeBlock code={componentCode} language='javascript' />
       </div>
-      <div className="text-center space-y-2">
-        <p className="text-neutral-400">Usage of Component</p>
+
+      <div className='text-center space-y-2'>
+        <p className='text-neutral-400'>Usage of Component</p>
       </div>
-      {/* Render the CodeBlock */}
-      <div className="max-w-4xl mx-auto">
-        <CodeBlock code={snippetCode} language="javascript" />
+
+      <div className='max-w-4xl mx-auto'>
+        <CodeBlock code={snippetCode} language='javascript' />
       </div>
       
     </div>
-  );
+  )
 }
